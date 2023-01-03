@@ -45,18 +45,36 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // Image.asset('images/nomikai_happy.png'),
             Text(
                 'モッタイナイと思うことを\nご記入ください',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
             ),
             SizedBox(height: 36,),
-            TextField(
-              maxLines: 8,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-              ),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SizedBox(
+                    width: double.infinity,
+                    child:  TextField(
+                      maxLines: 8,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    )
+                )
             ),
+            SizedBox(height: 12,),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SizedBox(
+                    width: double.infinity,
+                    child:  ElevatedButton(
+                      child: const Text('OK'),
+                      onPressed: () {},
+                    )
+                )
+            )
           ],
         ),
       ),
