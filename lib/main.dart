@@ -41,19 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+                'モッタイナイと思うことを\nご記入ください',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 36,),
+            TextField(
+              maxLines: 8,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ),
             ),
           ],
         ),
