@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter/submitted.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        // 初期画面のclassを指定
+        '/': (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+        // 次ページのclassを指定
+        '/submitted': (context) => Submitted(),
+      },
     );
   }
 }
@@ -47,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             // Image.asset('images/nomikai_happy.png'),
             Text(
-                'モッタイナイと思うことを\nご記入ください',
+                'それは無いだろと思うことを\nご記入ください',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
             ),
@@ -71,7 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: double.infinity,
                     child:  ElevatedButton(
                       child: const Text('OK'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/submitted');
+                      },
                     )
                 )
             )
